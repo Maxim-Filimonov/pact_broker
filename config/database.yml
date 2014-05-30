@@ -1,13 +1,14 @@
 default: &default
-  adapter: sqlite
-  database: db/pact_broker_database.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
 
 test:
   <<: *default
-  database: tmp/pact_broker_database_test.sqlite3
 
 development:
   <<: *default
 
 production:
   <<: *default
+  host: <%= ENV['DATABASE_URL'] %>

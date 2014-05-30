@@ -1,10 +1,15 @@
-require File.dirname(__FILE__) + '/config/boot'
-require 'db'
-require 'pact_broker/api'
+require 'fileutils'
+require 'logger'
+require 'sequel'
+require 'pact_broker'
 require 'rack/hal_browser'
 
-use Rack::HalBrowser::Redirect, :exclude => ['/diagnostic', '/trace']
+app = PactBroker::App.new do | config |
+  # change these from their default values if desired
+  # config.log_dir = "./log"
+  # config.auto_migrate_db = true
+  # config.use_hal_browser = true
+  config.database_connection = Sequel.connect(ENV['DATABASE_URL'],logger: config.logger)
+end
 
-run Rack::URLMap.new(
-  '/' => PactBroker::API
-)
+run app
