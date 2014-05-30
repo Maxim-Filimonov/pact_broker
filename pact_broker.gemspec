@@ -24,7 +24,6 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'json'
   gem.add_runtime_dependency 'roar'
   gem.add_runtime_dependency 'sequel'
-  gem.add_runtime_dependency 'sqlite3'
   gem.add_runtime_dependency 'webmachine'
   gem.add_runtime_dependency 'versionomy'
   gem.add_runtime_dependency 'rack'
