@@ -1,1 +1,1 @@
-web: RACK_ENV=PRODUCTION bundle exec rackup
+web: RACK_ENV=PRODUCTION bundle exec rackup -p $PORT
