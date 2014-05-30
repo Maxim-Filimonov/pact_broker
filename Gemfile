@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
-#source 'http://rea-rubygems/'
 
 gemspec
-
-#gem 'pact', :path => '../pact'
+#gem "pact_broker"
+gem "pg"
+gem "thin"
