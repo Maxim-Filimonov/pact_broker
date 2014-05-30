@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gemspec
-#gem "pact_broker"
+gem 'pack_broker', github: 'Maxim-Filimonov/pact_broker', branch: 'heroku'
 gem "pg"
 gem "thin"
